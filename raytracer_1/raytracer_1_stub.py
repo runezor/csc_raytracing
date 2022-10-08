@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from linalg_functions.linalg_functions_complete import *
+from linalg_functions.linalg_functions import *
 
 # Sets up the pixel grid
 width = 300
@@ -34,27 +34,16 @@ image = np.zeros((height, width, 3))
 for i in range(0, width):
     for j in range(0, height):
         # Computes the point of the pixel in 3d-space
-        pixel_coordinate = screen_top_left+x_vector*i+y_vector*j
+        pixel_coordinate = ???
         # Computes the line from the camera to the pixel
-        ray = (origin, normalised(pixel_coordinate-origin))
+        ray = ???
         # Sets the corresponding pixel in the image to black by default
-        image[j, i] = BLACK
+        image[j, i] = ???
         # Used for finding the closest object
         d = np.inf
         # Loop through objects
         for obj in scene:
-            if obj[0] == "sphere":
-                intersections = list(filter(lambda i: i > 0, get_intersections_line_sphere(ray, obj[1])))
-            if obj[0] == "plane":
-                intersections = list(filter(lambda i: i > 0, get_intersections_line_plane(ray, obj[1])))
-
-            # Checks if there are any intersections
-            if len(intersections) > 0:
-                # Checks if we have a closer intersection
-                if d > min(intersections):
-                    # If not, then use the color of the object to set the corresponding pixel
-                    d = min(intersections)
-                    image[j, i] = obj[2]
+            ???
 
 # Draw the image
 im = plt.imshow(image)
