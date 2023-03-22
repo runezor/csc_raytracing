@@ -1,5 +1,9 @@
 import numpy as np
 
+# Should return the length of v
+def length(v):
+    return np.sqrt(np.sum(v**2))
+
 # Should return the normalised vector of v
 def normalised(v):
     return v / np.sqrt(np.sum(v**2))

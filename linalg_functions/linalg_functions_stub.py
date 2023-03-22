@@ -1,6 +1,8 @@
 import numpy as np
 
-# Should re
+def length(v):
+    return np.sqrt(np.sum(v**2))
+
 def normalised(v):
     return v / np.sqrt(np.sum(v**2))
 
