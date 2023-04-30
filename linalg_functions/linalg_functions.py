@@ -1,4 +1,9 @@
 import numpy as np
+from collections import namedtuple
+
+# We will override these later
+Sphere = namedtuple("Sphere",["C","r"])
+Plane = namedtuple("Plane",["N","d"])
 
 # Should return the length of v
 def length(v):
@@ -9,28 +14,28 @@ def normalised(v):
     return v / np.sqrt(np.sum(v**2))
 
 # Should return a list of intersections between a line and a plane
-# The line is a list of the format (origin, direction), and the plane (N, d)
+# The line is a list of the format (origin, direction), and the plane as given above
 # If no intersections it should return the empty list
 def get_intersections_line_plane(line, plane):
     origin = line[0]
     direction = line[1]
 
-    if np.dot(plane[0], direction) is 0:
+    if np.dot(plane.N, direction) is 0:
         return []
-    s = - (plane[1] + np.dot(plane[0], origin)) / np.dot(plane[0], direction)
+    s = - (plane.d + np.dot(plane.N, origin)) / np.dot(plane.N, direction)
 
     return [s]
 
 # Should return a list of intersections between a line and a sphere
-# The line is a list of the format (origin, direction), and the sphere (O, r)
+# The line is a list of the format (origin, direction), and the sphere as given above
 # If no intersections it should return the empty list
 def get_intersections_line_sphere(line, sphere):
     origin = line[0]
     direction = line[1]
 
     a = np.dot(direction, direction)
-    b = np.dot(2 * direction, origin - sphere[0])
-    c = np.dot(origin - sphere[0], origin - sphere[0]) - sphere[1] ** 2
+    b = np.dot(2 * direction, origin - sphere.C)
+    c = np.dot(origin - sphere.C, origin - sphere.C) - sphere.r ** 2
     if b ** 2 - 4 * a * c < 0:
         return []
     else:

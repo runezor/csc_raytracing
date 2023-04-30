@@ -1,4 +1,9 @@
 import numpy as np
+from collections import namedtuple
+
+# Same types as earlier
+SphereColored = namedtuple("Sphere",["C","r","color"])
+PlaneColored = namedtuple("Plane",["N","d","color"])
 
 # Sets up the pixel grid
 WIDTH = 300
@@ -24,5 +29,5 @@ BLACK = (0,0,0)
 RED = (1,0,0)
 GREEN = (0,1,0)
 BLUE = (0,0,1)
-SCENE = [("sphere", ((1,0,12), 4), RED),("sphere", ((1.5,-1.5,4), 1), BLUE),("plane",((0,1,0),2),GREEN)]
+SCENE = [SphereColored((1,0,12), 4, RED),SphereColored((1.5,-1.5,4), 1, BLUE),PlaneColored((0,1,0),2,GREEN)]
 LIGHT = np.array([10,10,10])

@@ -24,10 +24,10 @@ def get_nearest_collision(ray, scene):
 
     # Loop through objects
     for obj in scene:
-        if obj[0] == "sphere":
-            intersections = list(filter(lambda i: i > 0, get_intersections_line_sphere(ray, obj[1])))
-        if obj[0] == "plane":
-            intersections = list(filter(lambda i: i > 0, get_intersections_line_plane(ray, obj[1])))
+        if "Sphere" in type(obj).__name__:
+            intersections = list(filter(lambda i: i > 0, get_intersections_line_sphere(ray, obj)))
+        if "Plane" in type(obj).__name__:
+            intersections = list(filter(lambda i: i > 0, get_intersections_line_plane(ray, obj)))
 
         # Checks if there are any intersections
         if len(intersections) > 0:

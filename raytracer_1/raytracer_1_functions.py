@@ -8,4 +8,4 @@ def compute_ray(camera_p, pixel_p):
     return (camera_p, normalised(pixel_p-camera_p))
 
 def get_colour(obj):
-    return obj[2]
+    return obj.color

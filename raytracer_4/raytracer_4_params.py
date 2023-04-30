@@ -1,8 +1,13 @@
 import numpy as np
+from collections import namedtuple
+
+# New, fancier Phong-tastic types with a reflection variable in the phongvals as well
+SpherePhongEx = namedtuple("Sphere",["C","r","color","phongValsEx"])
+PlanePhongEx = namedtuple("Plane",["N","d","color","phongValsEx"])
 
 # Sets up the pixel grid
-WIDTH = 900
-HEIGHT = 600
+WIDTH = 450
+HEIGHT = 300
 
 # Needed to avoid stretching
 RATIO = float(HEIGHT)/WIDTH
@@ -26,6 +31,6 @@ GREEN = (0,1,0)
 BLUE = (0,0,1)
 YELLOW = (1,1,0)
 GREY = (0.5,0.5,0.5)
-SCENE = [("sphere", ((1,3,12), 4), RED, (0.8,0.8,0.4,0.8)),("sphere", ((1.5,-1.5,4), 1), BLUE, (0.9,0.9,0.9,0)),("sphere",((3.5,-1.5,4), 0.2), YELLOW, (0.9,0.9,0.9,0.05)),("sphere",((-3.5,-2.5,8), 0.8), GREEN, (0.9,0.9,0.9,0.5)),("plane",((0,1,0),8),GREY,(0.9,0.9,0.9,1.0))]
+SCENE = [SpherePhongEx((1,1,12), 4, RED, (0.8,0.8,0.4,0.8)),SpherePhongEx((1.5,-1.5,4), 1, BLUE, (0.9,0.9,0.9,0)),SpherePhongEx((3.5,-1.5,4), 0.2, YELLOW, (0.9,0.9,0.9,0.05)),SpherePhongEx((-3.5,-2.5,8), 0.8, GREEN, (0.9,0.9,0.9,0.5)),PlanePhongEx((0,1,0),8,GREY,(0.9,0.9,0.9,1.0))]
 AMBIENT = 0.1
 LIGHTS = [(np.array([10,10,10]),0.2),(np.array([-10,10,10]),0.1),(np.array([5,1,-10]),0.8)]

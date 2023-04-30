@@ -1,4 +1,9 @@
 import numpy as np
+from collections import namedtuple
+
+# New, even more Phong-tastic types
+SpherePhong = namedtuple("Sphere",["C","r","color","phongVals"])
+PlanePhong = namedtuple("Plane",["N","d","color","phongVals"])
 
 # Sets up the pixel grid
 WIDTH = 300
@@ -25,6 +30,6 @@ RED = (1,0,0)
 GREEN = (0,1,0)
 BLUE = (0,0,1)
 YELLOW = (1,1,0)
-SCENE = [("sphere", ((1,0,12), 4), RED, (0.8,0.8,0.4)),("sphere", ((1.5,-1.5,4), 1), BLUE, (0.9,0.9,0.9)),("sphere",((3.5,-1.5,4), 0.2), YELLOW, (0.9,0.9,0.9)),("sphere",((-3.5,-2.5,8), 0.8), GREEN, (0.9,0.9,0.9)),]
+SCENE = [SpherePhong((1,0,12), 4, RED, (0.8,0.8,0.4)),SpherePhong((1.5,-1.5,4), 1, BLUE, (0.9,0.9,0.9)),SpherePhong((3.5,-1.5,4), 0.2, YELLOW, (0.9,0.9,0.9)),SpherePhong((-3.5,-2.5,8), 0.8, GREEN, (0.9,0.9,0.9))]
 AMBIENT = 0.1
 LIGHTS = [(np.array([10,10,10]),0.2),(np.array([-10,10,10]),0.1),(np.array([5,1,-10]),0.8)]
