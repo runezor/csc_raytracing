@@ -18,16 +18,20 @@ for i in range(0, WIDTH):
         pixel_coordinate = screen_pixel_corrdinate_to_3d_point(i, j, SCREEN_TOP_LEFT, SCREEN_X_VECTOR, SCREEN_Y_VECTOR)
         direction_from_camera = normalised(pixel_coordinate-ORIGIN)
 
-        color = get_incoming_light_at_point(pixel_coordinate, direction_from_camera, 4, SCENE, LIGHTS, AMBIENT)
+        color = get_incoming_light_at_point(pixel_coordinate, direction_from_camera, SCENE, LIGHTS, AMBIENT, 3)
 
         image[j, i] = color
-        normaliser = max([normaliser, color[0], color[1], color[2]])
+        normaliser = max([normaliser, color[0], color[1], color[2]])*0.999
 
 for i in range(0, WIDTH):
     for j in range(0, HEIGHT):
-        image[j, i] = image[j, i] / normaliser
+        image[j, i] = np.clip(image[j, i] / normaliser, 0, 1)
 
 # Draw the image
-if __name__ == "__main__":
-    im = plt.imshow(image)
-    plt.show()
+fig = plt.figure(frameon=False)
+ax = plt.Axes(fig, [0., 0., 1., 1.])
+ax.set_axis_off()
+fig.add_axes(ax)
+
+plt.imshow(image)
+plt.show()

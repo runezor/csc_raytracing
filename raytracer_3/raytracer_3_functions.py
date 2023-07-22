@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from linalg_functions.linalg_functions import *
+from linalg_functions.colours import *
 from raytracer_2.raytracer_2_functions import *
 
 def get_normal_to_object(point, obj):
@@ -8,10 +9,12 @@ def get_normal_to_object(point, obj):
     if "Plane" in type(obj).__name__:
         return normalised(np.array(obj.N))
 
-def calculate_phong_illumination(scene, direction_from_camera, ambient, lights, collision_point, obj, k_a, k_d, k_s):
+def calculate_phong_color(collision_point, obj, direction_from_camera, ambient, lights, scene):
     # Computes where the line intersects with the object
+    k_a, k_d, k_s = obj.phongVals
 
-    illumination = ambient * k_a
+    diffuse = 0
+    specular = 0
     for light in lights:
         light_intensity = light[1]
 
@@ -28,11 +31,11 @@ def calculate_phong_illumination(scene, direction_from_camera, ambient, lights, 
         if distance_to_light < d2:
             normal = get_normal_to_object(collision_point, obj)
             # Computes diffuse
-            diffuse = light_intensity * k_d * np.dot(normal, direction_to_light)
+            diffuse += light_intensity * np.dot(normal, direction_to_light)
             # Computes spectral
             R = 2 * normal * (np.dot(direction_to_light, normal)) - direction_to_light
-            spectral = light_intensity * k_s * (np.dot(R, -direction_from_camera)) ** 20
-            # Adds to illumination (Phong)
-            illumination += diffuse + spectral
+            specular += light_intensity * (np.dot(R, -direction_from_camera)) ** 20
 
-    return illumination
+    color = np.array(obj.color)*(ambient*k_a+diffuse*k_d)+np.array([1,1,1])*(specular*k_s)
+
+    return color

@@ -1,4 +1,5 @@
 from linalg_functions.linalg_functions import *
+from linalg_functions.colours import *
 import numpy as np
 
 # Given the current collision point, the light point, and the scene...

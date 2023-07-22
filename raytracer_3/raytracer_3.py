@@ -21,14 +21,17 @@ for i in range(0, WIDTH):
         if d == np.inf:
             image[j, i] = BLACK
         else:
-            k_a, k_d, k_s = obj_closest.phongVals
 
             collision_point = ray[0] + ray[1] * d
             # Adds ambient light
-            illumination = calculate_phong_illumination(SCENE, direction_from_camera, AMBIENT, LIGHTS, collision_point, obj_closest, k_a, k_d, k_s)
-
-            image[j, i] = np.array(obj_closest.color) * min(illumination,1)
+            color = calculate_phong_color(collision_point, obj_closest, direction_from_camera, AMBIENT, LIGHTS, SCENE)
+            image[j, i] = color
 
 # Draw the image
+fig = plt.figure(frameon=False)
+ax = plt.Axes(fig, [0., 0., 1., 1.])
+ax.set_axis_off()
+fig.add_axes(ax)
+
 plt.imshow(image)
 plt.show()

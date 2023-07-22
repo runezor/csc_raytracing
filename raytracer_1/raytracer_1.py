@@ -13,24 +13,18 @@ for i in range(0, WIDTH):
         pixel_coordinate = screen_pixel_corrdinate_to_3d_point(i, j, SCREEN_TOP_LEFT, SCREEN_X_VECTOR, SCREEN_Y_VECTOR)
         # Computes the line from the camera to the pixel
         ray = compute_ray(ORIGIN, pixel_coordinate)
-        # Sets the corresponding pixel in the image to black by default
-        image[j, i] = BLACK
         # Used for finding the closest object
         d = np.inf
+        closet_obj = None
         # Loop through objects
         for obj in SCENE:
-            if "Sphere" in type(obj).__name__:
-                intersections = list(filter(lambda i: i > 0, get_intersections_line_sphere(ray, obj)))
-            if "Plane" in type(obj).__name__:
-                intersections = list(filter(lambda i: i > 0, get_intersections_line_plane(ray, obj)))
-
-            # Checks if there are any intersections
-            if len(intersections) > 0:
-                # Checks if we have a closer intersection
-                if d > min(intersections):
-                    # If not, then use the color of the object to set the corresponding pixel
-                    d = min(intersections)
-                    image[j, i] = get_colour(obj)
+            distance = compute_distance_to_obj(ray, obj)
+            if d > distance:
+                # If not, then use the color of the object to set the corresponding pixel
+                d = distance
+                closet_obj = obj
+        # Sets the corresponding pixel in the image to black by default
+        image[j, i] = get_colour(closet_obj)
 
 # Draw the image
 plt.imshow(image)

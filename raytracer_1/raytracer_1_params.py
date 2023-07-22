@@ -1,4 +1,5 @@
 import numpy as np
+from linalg_functions.colours import *
 from collections import namedtuple
 
 # Adding a splash of color to our types!
@@ -25,8 +26,4 @@ SCREEN_X_VECTOR = (SCREEN_TOP_RIGHT-SCREEN_TOP_LEFT)/WIDTH
 SCREEN_Y_VECTOR = (SCREEN_BOTTOM_LEFT-SCREEN_TOP_LEFT)/HEIGHT
 
 # Defines the scene
-BLACK = (0,0,0)
-RED = (1,0,0)
-GREEN = (0,1,0)
-BLUE = (0,0,1)
 SCENE = [SphereColored((1,0,12), 4, RED),SphereColored((1.5,-1.5,4), 1, BLUE),PlaneColored((0,1,0),2,GREEN)]

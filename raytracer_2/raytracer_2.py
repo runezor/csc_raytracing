@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from linalg_functions.linalg_functions import *
 from raytracer_1.raytracer_1_functions import *
 from raytracer_2_functions import *
 from raytracer_2_params import *
