@@ -7,8 +7,8 @@ SpherePhong = namedtuple("Sphere",["C","r","color","phongVals"])
 PlanePhong = namedtuple("Plane",["N","d","color","phongVals"])
 
 # Sets up the pixel grid
-WIDTH = 400
-HEIGHT = 400
+WIDTH = 300
+HEIGHT = 200
 
 # Needed to avoid stretching
 RATIO = float(HEIGHT)/WIDTH

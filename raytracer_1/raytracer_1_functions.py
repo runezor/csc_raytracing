@@ -2,16 +2,16 @@ from linalg_functions.linalg_functions import *
 from linalg_functions.colours import *
 
 def screen_pixel_corrdinate_to_3d_point(x, y, SCREEN_TOP_LEFT, SCREEN_X_VECTOR, SCREEN_Y_VECTOR):
-    return SCREEN_TOP_LEFT+SCREEN_X_VECTOR*x+SCREEN_Y_VECTOR*y
+    return 0
 
 def compute_ray(camera_p, pixel_p):
-    return (camera_p, normalised(pixel_p-camera_p))
+    return (0, 0)
 
 def compute_distance_to_obj(ray, obj):
     if "Sphere" in type(obj).__name__:
-        intersections = list(filter(lambda i: i > 0, get_intersections_line_sphere(ray, obj)))
+        intersections = []
     if "Plane" in type(obj).__name__:
-        intersections = list(filter(lambda i: i > 0, get_intersections_line_plane(ray, obj)))
+        intersections = []
 
     # Checks if there are any intersections
     if len(intersections) > 0:
@@ -20,8 +20,6 @@ def compute_distance_to_obj(ray, obj):
     else:
         return np.inf
 
+# obj kan være none her, og det skal der tjekkes efter
 def get_colour(obj):
-    if obj is None:
-        return BLACK #FIXME WITHOUT IMPORTING PARAMS
-    else:
-        return obj.color
+    return BLACK
