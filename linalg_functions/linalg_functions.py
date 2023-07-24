@@ -7,11 +7,11 @@ Plane = namedtuple("Plane",["N","d"])
 
 # Should return the length of v
 def length(v):
-    return np.sqrt(np.sum(v**2))
+    return 0
 
 # Should return the normalised vector of v
 def normalised(v):
-    return v / np.sqrt(np.sum(v**2))
+    return 0
 
 # Should return a list of intersections between a line and a plane
 # The line is a list of the format (origin, direction), and the plane as given above
