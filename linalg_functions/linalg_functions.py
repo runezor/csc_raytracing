@@ -20,6 +20,9 @@ def get_intersections_line_plane(line, plane):
     origin = line[0]
     direction = line[1]
 
+    N = plane.N
+    d = plane.d
+
     return []
 
 # Should return a list of intersections between a line and a sphere
@@ -28,5 +31,8 @@ def get_intersections_line_plane(line, plane):
 def get_intersections_line_sphere(line, sphere):
     origin = line[0]
     direction = line[1]
+
+    C = sphere.C
+    r = sphere.r
 
     return []
