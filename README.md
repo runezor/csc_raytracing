@@ -13,4 +13,4 @@ A basic raytracer with basic lights and shadows.
 ## raytracer_3
 A basic raytracer with the Phong lighting model.
 ## raytracer_4
-Transparency? Reflection? Yet to be seen!
+A basic raytracer that also implements surface reflection.
