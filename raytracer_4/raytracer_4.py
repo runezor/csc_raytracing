@@ -15,7 +15,7 @@ normaliser = 1
 for i in range(0, WIDTH):
     for j in range(0, HEIGHT):
         # Computes the point of the pixel in 3d-space
-        pixel_coordinate = screen_pixel_corrdinate_to_3d_point(i, j, SCREEN_TOP_LEFT, SCREEN_X_VECTOR, SCREEN_Y_VECTOR)
+        pixel_coordinate = screen_pixel_coordinate_to_3d_point(i, j, SCREEN_TOP_LEFT, SCREEN_X_VECTOR, SCREEN_Y_VECTOR)
         direction_from_camera = normalised(pixel_coordinate-ORIGIN)
 
         color = get_incoming_light_at_point(pixel_coordinate, direction_from_camera, SCENE, LIGHTS, AMBIENT, 3)

@@ -10,7 +10,7 @@ image = np.zeros((HEIGHT, WIDTH, 3))
 for i in range(0, WIDTH):
     for j in range(0, HEIGHT):
         # Computes the point of the pixel in 3d-space
-        pixel_coordinate = screen_pixel_corrdinate_to_3d_point(i, j, SCREEN_TOP_LEFT, SCREEN_X_VECTOR, SCREEN_Y_VECTOR)
+        pixel_coordinate = screen_pixel_coordinate_to_3d_point(i, j, SCREEN_TOP_LEFT, SCREEN_X_VECTOR, SCREEN_Y_VECTOR)
         # Computes the line from the camera to the pixel
         ray = compute_ray(ORIGIN, pixel_coordinate)
         # Used for finding the closest object
