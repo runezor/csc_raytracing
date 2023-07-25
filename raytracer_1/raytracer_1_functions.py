@@ -5,7 +5,7 @@ def screen_pixel_coordinate_to_3d_point(x, y, SCREEN_TOP_LEFT, SCREEN_X_VECTOR, 
     return SCREEN_TOP_LEFT+SCREEN_X_VECTOR*x+SCREEN_Y_VECTOR*y
 
 def compute_ray(camera_p, pixel_p):
-    return (camera_p, normalised(pixel_p-camera_p))
+    return Line(camera_p, normalised(pixel_p-camera_p))
 
 def compute_distance_to_obj(ray, obj):
     if "Sphere" in type(obj).__name__:

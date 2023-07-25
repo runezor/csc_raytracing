@@ -6,7 +6,7 @@ from raytracer_2.raytracer_2_functions import *
 from raytracer_3.raytracer_3_functions import *
 
 def get_incoming_light_at_point(S,M, SCENE, LIGHTS, AMBIENT, rec_i):
-    ray = (S, M)
+    ray = Line(S, M)
     # Sets the cforresponding pixel in the image to black by default
     d, obj_closest = get_nearest_collision(ray, SCENE)
     if d == np.inf:
@@ -15,7 +15,7 @@ def get_incoming_light_at_point(S,M, SCENE, LIGHTS, AMBIENT, rec_i):
         k_t = obj_closest.rF
 
         # Computes where the line intersects with the object
-        collision_point = ray[0] + ray[1] * d
+        collision_point = ray.L0 + ray.L * d
 
         # Uses previous Phong illumination
         color = calculate_phong_color(collision_point, obj_closest, M, AMBIENT, LIGHTS, SCENE)

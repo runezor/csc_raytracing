@@ -9,7 +9,7 @@ def is_light_blocked(collision_point, light_point, scene):
     vector_to_light = light_point - collision_point
     direction_to_light = normalised(vector_to_light)
     distance_to_light = length(vector_to_light)
-    ray_to_light = (collision_point + direction_to_light * 0.01, direction_to_light)
+    ray_to_light = Line(collision_point + direction_to_light * 0.01, direction_to_light)
 
     d2, obj_inbetween_light = get_nearest_collision(ray_to_light, scene)
     return d2 < distance_to_light

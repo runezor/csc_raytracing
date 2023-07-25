@@ -22,7 +22,7 @@ for i in range(0, WIDTH):
             image[j, i] = BLACK
         else:
 
-            collision_point = ray[0] + ray[1] * d
+            collision_point = ray.L0 + ray.L * d
             # Adds ambient light
             color = calculate_phong_color(collision_point, obj_closest, direction_from_camera, AMBIENT, LIGHTS, SCENE)
             image[j, i] = color

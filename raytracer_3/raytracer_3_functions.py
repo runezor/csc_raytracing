@@ -22,7 +22,7 @@ def calculate_phong_color(collision_point, obj, direction_from_camera, ambient, 
         vector_to_light = light[0] - collision_point
         direction_to_light = normalised(vector_to_light)
         distance_to_light = length(vector_to_light)
-        ray_to_light = (collision_point + direction_to_light * 0.01, direction_to_light)
+        ray_to_light = Line(collision_point + direction_to_light * 0.01, direction_to_light)
 
         # Calculates if there's any objects on the line between the light and the intersection point
         d2, obj_inbetween_light = get_nearest_collision(ray_to_light, scene)
