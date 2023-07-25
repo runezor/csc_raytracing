@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from raytracer_1.raytracer_1_functions import *
-from raytracer_2_functions import *
-from raytracer_2_params import *
+from .raytracer_2_functions import *
+from .raytracer_2_params import *
 
 # Initialises the image
 image = np.zeros((HEIGHT, WIDTH, 3))
