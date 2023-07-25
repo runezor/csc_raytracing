@@ -12,6 +12,7 @@ def length(v):
 
 # Should return the normalised vector of v
 def normalised(v):
+    # INDSÆT KODE HER
     return 0
 
 # Should return a list of intersections between a line and a plane
@@ -24,6 +25,7 @@ def get_intersections_line_plane(line, plane):
     N = plane.N
     d = plane.d
 
+    # INDSÆT KODE HER
     return []
 
 # Should return a list of intersections between a line and a sphere
@@ -36,4 +38,5 @@ def get_intersections_line_sphere(line, sphere):
     C = sphere.C
     r = sphere.r
 
+    # INDSÆT KODE HER
     return []

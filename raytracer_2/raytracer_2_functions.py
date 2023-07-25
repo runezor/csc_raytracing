@@ -6,9 +6,11 @@ import numpy as np
 # ... this function should return true if the object in the origin position of the ray
 # Is blocked by the light
 def is_light_blocked(collision_point, light_point, scene):
+    # INDSÆT KODE HER
     return False
 
 # Line is a (normalised!) tuple with an origin and a direction, the scene is the list of objects
 # Returns a tuple with the distance, and the object
 def get_nearest_collision(ray, scene):
+    # INDSÆT KODE HER
     return np.Inf, None

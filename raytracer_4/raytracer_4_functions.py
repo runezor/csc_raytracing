@@ -9,4 +9,5 @@ def get_incoming_light_at_point(S,M, SCENE, LIGHTS, AMBIENT, rec_i):
     ray = Line(S, M)
     d, obj_closest = get_nearest_collision(ray, SCENE)
 
+    # INDSÆT KODE HER
     return BLACK
