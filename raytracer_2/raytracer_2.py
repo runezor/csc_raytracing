@@ -20,7 +20,7 @@ for i in range(0, WIDTH):
             image[j, i] = BLACK
         else:
             # Computes where the line intersects with the object
-            collision_point = ray[0]+ray[1]*d
+            collision_point = ray.L0+ray.L*d
 
             # Checks if the object intersecting is inbetween the intersection point and the light
             if not is_light_blocked(collision_point, LIGHT, SCENE):

@@ -4,6 +4,7 @@ from collections import namedtuple
 # We will override these later
 Sphere = namedtuple("Sphere",["C","r"])
 Plane = namedtuple("Plane",["N","d"])
+Line = namedtuple("Line",["L0","L"])
 
 # Should return the length of v
 def length(v):
@@ -17,8 +18,8 @@ def normalised(v):
 # The line is a list of the format (origin, direction), and the plane as given above
 # If no intersections it should return the empty list
 def get_intersections_line_plane(line, plane):
-    origin = line[0]
-    direction = line[1]
+    origin = line.L0
+    direction = line.L
 
     N = plane.N
     d = plane.d
@@ -29,8 +30,8 @@ def get_intersections_line_plane(line, plane):
 # The line is a list of the format (origin, direction), and the sphere as given above
 # If no intersections it should return the empty list
 def get_intersections_line_sphere(line, sphere):
-    origin = line[0]
-    direction = line[1]
+    origin = line.L0
+    direction = line.L
 
     C = sphere.C
     r = sphere.r
