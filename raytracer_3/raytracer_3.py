@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 from linalg_functions.linalg_functions import *
 from raytracer_1.raytracer_1_functions import *
 from raytracer_2.raytracer_2_functions import *
-from raytracer_3_functions import *
-from raytracer_3_params import *
+from .raytracer_3_functions import *
+from .raytracer_3_params import *
 
 # Initialises the image
 image = np.zeros((HEIGHT, WIDTH, 3))
