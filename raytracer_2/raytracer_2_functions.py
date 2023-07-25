@@ -11,4 +11,12 @@ def is_light_blocked(collision_point, light_point, scene):
 # Line is a (normalised!) tuple with an origin and a direction, the scene is the list of objects
 # Returns a tuple with the distance, and the object
 def get_nearest_collision(ray, scene):
+    #Brug evt. følgende til at loope gennem objekterne
+    #for obj in scene:
+    #    if "Sphere" in type(obj).__name__:
+    #        ...
+    #    if "Plane" in type(obj).__name__:
+    #        ...
+
+
     return np.Inf, None
