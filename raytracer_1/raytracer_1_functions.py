@@ -21,6 +21,7 @@ def compute_distance_to_obj(ray, obj):
     return np.inf
 
 def get_colour(obj):
+    #INDSÆT KODE HER
     if obj is None:
         return BLACK #FIXME WITHOUT IMPORTING PARAMS
     else:
