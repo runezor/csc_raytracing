@@ -11,13 +11,12 @@ def get_normal_to_object(point, obj):
         return np.array(0,1,0)
 
 def calculate_phong_color(collision_point, obj, direction_from_camera, ambient, lights, scene):
+    # INDSÆT KODE HER
     # Henter Phong værdierne
     k_a, k_d, k_s = obj.phongVals
-
     # Brug gerne disse til at beregne summen
     diffuse = 0
     specular = 0
-    # Hvis i ønsker at loope gennem lyset kan i bruge for light in lights:
-
-    # INDSÆT KODE HER
+    # Hvis i ønsker at loope gennem lyset kan i bruge
+    # for light in lights:
     return BLACK
