@@ -22,6 +22,7 @@ try:
     assert(np.linalg.norm(get_intersections_line_sphere(Line(np.array([1,2,0]),np.array([-1,0,0])), Sphere(np.array([0,0,0]),2))[1]) == 1)
     assert(np.linalg.norm(get_intersections_line_sphere(Line(np.array([3,0,0]),np.array([-1,0,0])), Sphere(np.array([0,0,0]),2))[1]) == 1)
     assert(np.linalg.norm(get_intersections_line_sphere(Line(np.array([3,0,0]),np.array([-1,0,0])), Sphere(np.array([0,0,0]),2))[0]) == 5)
+    print("Godt Klaret!")
 except AssertionError as e:
     print("Tough luck mester, se nedestående fejl:")
     raise e
