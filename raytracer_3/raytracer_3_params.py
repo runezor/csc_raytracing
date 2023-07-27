@@ -26,6 +26,11 @@ SCREEN_X_VECTOR = (SCREEN_TOP_RIGHT-SCREEN_TOP_LEFT)/WIDTH
 SCREEN_Y_VECTOR = (SCREEN_BOTTOM_LEFT-SCREEN_TOP_LEFT)/HEIGHT
 
 # Defines the scene
-SCENE = [SpherePhong((1,0,12), 4, RED, (0.8,0.8,0.4)),SpherePhong((1.5,-1.5,4), 1, BLUE, (0.9,0.9,0.9)),SpherePhong((3.5,-1.5,4), 0.2, YELLOW, (0.9,0.9,0.9)),SpherePhong((-3.5,-2.5,8), 0.8, GREEN, (0.9,0.9,0.9))]
 AMBIENT = 0.4
 LIGHTS = [(np.array([4,4,1]),1.0)]
+
+SCENE = [SpherePhong((1,0,12), 4, RED, (0.8,0.8,0.4)),
+         SpherePhong((1.5,-1.5,4), 1, BLUE, (0.9,0.9,0.9)),
+         SpherePhong((3.5,-1.5,4), 0.2, YELLOW, (0.9,0.9,0.9)),
+         SpherePhong((-3.5,-2.5,8), 0.8, GREEN, (0.9,0.9,0.9))]
+

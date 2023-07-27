@@ -23,9 +23,10 @@ for i in range(0, WIDTH):
         image[j, i] = color
         normaliser = max([normaliser, color[0], color[1], color[2]])*0.999
 
-for i in range(0, WIDTH):
-    for j in range(0, HEIGHT):
-        image[j, i] = np.clip(image[j, i] / normaliser, 0, 1)
+if NORMALISE:
+    for i in range(0, WIDTH):
+        for j in range(0, HEIGHT):
+            image[j, i] = np.clip(image[j, i] / normaliser, 0, 1)
 
 # Draw the image
 fig = plt.figure(frameon=False)

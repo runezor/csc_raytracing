@@ -26,4 +26,6 @@ SCREEN_X_VECTOR = (SCREEN_TOP_RIGHT-SCREEN_TOP_LEFT)/WIDTH
 SCREEN_Y_VECTOR = (SCREEN_BOTTOM_LEFT-SCREEN_TOP_LEFT)/HEIGHT
 
 # Defines the scene
-SCENE = [SphereColored((1,0,12), 4, RED),SphereColored((1.5,-1.5,4), 1, BLUE),PlaneColored((0,1,0),2,GREEN)]
+SCENE = [SphereColored((1,0,12), 4, RED),
+         SphereColored((1.5,-1.5,4), 1, BLUE),
+         PlaneColored((0,1,0),2,GREEN)]
